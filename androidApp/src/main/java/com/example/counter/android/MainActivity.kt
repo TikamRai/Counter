@@ -3,6 +3,7 @@ package com.example.counter.android
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -18,7 +19,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
@@ -54,11 +57,21 @@ fun DefaultPreview() {
 @Composable
 fun CountView() {
     val displayText = remember {mutableStateOf("0")}
-    Column() {
-        Row(modifier = Modifier.padding(10.dp).height(50.dp)) {
+    Column(modifier = Modifier.
+    background(Color.LightGray)
+    ) {
+        Row(modifier = Modifier.
+        padding(10.dp).
+        height(50.dp).
+        width(200.dp).
+        align(alignment = CenterHorizontally).
+        background(Color.White)) {
             CountDisplay(displayText)
         }
-        Row(modifier = Modifier.padding(10.dp).height(50.dp)) {
+        Row(modifier = Modifier.
+        padding(10.dp).
+        height(50.dp).
+        align(alignment = CenterHorizontally)) {
             Column() {
                 IncButton(displayText)
             }
